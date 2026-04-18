@@ -131,7 +131,7 @@ const Step3PasswordCreation = ({ data }) => {
       </div>
 
       <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-sm text-yellow-800">
-        ⚠️ <strong>Important:</strong> Save this password somewhere safe before continuing. You won't be able to see it again. Your login email is <strong>{data.email}</strong>.
+        ⚠️ <strong>Important:</strong> Save this password somewhere safe before continuing. You can log in with your email (<strong>{data.email}</strong>) and this password.
       </div>
 
       <Button type="submit" className="w-full" disabled={loading}>

@@ -45,7 +45,7 @@ const HomePage = () => {
                     View Prompt Bank <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link to="/submit">
+                <Link to="/signup">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 h-14 rounded-full border-2 border-primary text-primary hover:bg-primary/5 transition-all">
                     Submit Your Essay
                   </Button>
