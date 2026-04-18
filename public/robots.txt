@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nationaleconomicschallenge.dedyn.io/sitemap.xml
