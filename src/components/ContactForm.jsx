@@ -17,11 +17,8 @@ const ContactForm = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
+    if (!formData.email.trim()) { newErrors.email = 'Email is required'; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) { newErrors.email = 'Invalid email'; }
     if (!formData.message.trim()) newErrors.message = 'Message is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -37,17 +34,10 @@ const ContactForm = () => {
     if (!validateForm()) return;
     setLoading(true);
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_CONTACT_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject || 'No subject',
-          message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TEMPLATE_ID, {
+        from_name: formData.name, from_email: formData.email,
+        subject: formData.subject || 'No subject', message: formData.message,
+      }, EMAILJS_PUBLIC_KEY);
       toast({ title: "Message Sent!", description: "We'll get back to you soon." });
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
