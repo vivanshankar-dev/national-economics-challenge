@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 
 const EMAILJS_SERVICE_ID = 'service_xq99sct';
 const EMAILJS_VERIFICATION_TEMPLATE_ID = 'template_j4f3fq7';
-const EMAILJS_PUBLIC_KEY = 'VMqIefDXUISYTLxmu';
+const EMAILJS_PUBLIC_KEY = 'VMqIefDXUlSYTLxmu';
 
 const Step1EmailEntry = ({ onNext, data, updateData }) => {
   const [loading, setLoading] = useState(false);

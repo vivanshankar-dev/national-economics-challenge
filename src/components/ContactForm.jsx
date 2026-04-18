@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 
 const EMAILJS_SERVICE_ID = 'service_xq99sct';
 const EMAILJS_CONTACT_TEMPLATE_ID = 'template_f6tptid';
-const EMAILJS_PUBLIC_KEY = 'VMqIefDXUISYTLxmu';
+const EMAILJS_PUBLIC_KEY = 'VMqIefDXUlSYTLxmu';
 
 const ContactForm = () => {
   const { toast } = useToast();
