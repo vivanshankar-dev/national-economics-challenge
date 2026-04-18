@@ -1,26 +1,39 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Copy, Check, KeyRound } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import bcrypt from 'bcryptjs';
 
+const generatePassword = () => {
+  const words = ['Eagle', 'River', 'Storm', 'Maple', 'Comet', 'Ember', 'Frost', 'Blaze', 'Cedar', 'Ocean'];
+  const word = words[Math.floor(Math.random() * words.length)];
+  const num = Math.floor(1000 + Math.random() * 9000);
+  const symbols = ['!', '@', '#', '$', '&'];
+  const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+  return `${word}${num}${symbol}`;
+};
+
 const Step3PasswordCreation = ({ data }) => {
-  const [password, setPassword] = useState('');
+  const [password] = useState(generatePassword());
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(password);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // Register with Supabase Auth to enable login
       const { data: authData, error: authError } = await supabase.auth.signUp({
         email: data.email,
         password: password,
@@ -34,11 +47,9 @@ const Step3PasswordCreation = ({ data }) => {
 
       if (authError) throw authError;
 
-      // Hash password for the table as requested
       const salt = bcrypt.genSaltSync(10);
       const passwordHash = bcrypt.hashSync(password, salt);
 
-      // Create participant record
       const { error: insertError } = await supabase
         .from('participants')
         .insert([{
@@ -53,8 +64,6 @@ const Step3PasswordCreation = ({ data }) => {
 
       if (insertError) throw insertError;
 
-      // Save signup data to signups table
-      console.log("Saving signup data to signups table...");
       const { error: signupError } = await supabase
         .from('signups')
         .insert([{
@@ -68,27 +77,13 @@ const Step3PasswordCreation = ({ data }) => {
 
       if (signupError) {
         console.error("Failed to save signup data:", signupError);
-        throw new Error("Failed to save signup data: " + signupError.message);
       }
 
-      console.log("Signup data saved successfully");
-      toast({
-        title: "Signup Data Saved",
-        description: "Your registration details have been recorded.",
-      });
-
-      // Send credentials email to user
-      const { error: credentialsError } = await supabase.functions.invoke('send-signup-credentials', {
+      await supabase.functions.invoke('send-signup-credentials', {
         body: { email: data.email, username: data.email, password: password }
       });
 
-      if (credentialsError) {
-        console.error("Failed to send credentials email:", credentialsError);
-      }
-
-      // Send signup notification email to team
-      console.log("Sending signup notification to team...");
-      const { error: notificationError } = await supabase.functions.invoke('send-signup-email', {
+      await supabase.functions.invoke('send-signup-email', {
         body: { 
           name: data.fullName,
           email: data.email,
@@ -98,23 +93,7 @@ const Step3PasswordCreation = ({ data }) => {
         }
       });
 
-      if (notificationError) {
-        console.error("Failed to send signup notification email:", notificationError);
-        // Don't block signup completion if email fails
-      } else {
-        console.log("Signup notification sent successfully");
-        toast({
-          title: "Team Notified",
-          description: "Signup confirmation sent to team@nationaleconomicschallenge.dedyn.io",
-        });
-      }
-
-      await supabase.auth.signOut(); // Ensure they log in cleanly
-      
-      toast({
-        title: "Account Created!",
-        description: "Your account has been successfully created.",
-      });
+      await supabase.auth.signOut();
       navigate('/confirmation');
     } catch (error) {
       console.error("Account creation error:", error);
@@ -130,27 +109,34 @@ const Step3PasswordCreation = ({ data }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="text-center mb-4">
+      <div className="text-center">
+        <KeyRound className="mx-auto h-10 w-10 text-primary mb-3" />
+        <h3 className="font-bold text-lg text-foreground mb-1">Your Password is Ready</h3>
         <p className="text-sm text-muted-foreground">
-          Almost done! Create a secure password for your account.
+          We've generated a secure password for your account. <strong>Please save it now</strong> — you'll need it to log in.
         </p>
       </div>
-      <div>
-        <Label htmlFor="password">Password</Label>
-        <Input
-          id="password"
-          type="password"
-          required
-          minLength={6}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="••••••••"
-          className="mt-1 text-foreground"
-        />
+
+      <div className="bg-secondary/40 border-2 border-primary/30 rounded-2xl p-5 text-center">
+        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2 font-semibold">Your Password</p>
+        <p className="text-2xl font-mono font-bold text-foreground tracking-widest mb-4">{password}</p>
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors"
+        >
+          {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+          {copied ? 'Copied!' : 'Copy Password'}
+        </button>
       </div>
-      <Button type="submit" className="w-full" disabled={loading || password.length < 6}>
+
+      <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-sm text-yellow-800">
+        ⚠️ <strong>Important:</strong> Save this password somewhere safe before continuing. You won't be able to see it again. Your login email is <strong>{data.email}</strong>.
+      </div>
+
+      <Button type="submit" className="w-full" disabled={loading}>
         {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        Create Account
+        {loading ? 'Creating Account...' : 'I\'ve Saved My Password — Create Account'}
       </Button>
     </form>
   );

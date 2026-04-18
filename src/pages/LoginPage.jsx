@@ -12,27 +12,38 @@ const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [unverifiedEmail, setUnverifiedEmail] = useState(null);
+  const [loginError, setLoginError] = useState(null);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear unverified state if they change email
     if (unverifiedEmail) setUnverifiedEmail(null);
+    if (loginError) setLoginError(null);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setUnverifiedEmail(null);
+    setLoginError(null);
 
     try {
       await login(formData.email, formData.password);
-      // Redirect to protected dashboard/submission after successful login
       navigate('/essay-submission', { replace: true });
     } catch (error) {
       if (error.message.includes("verify your email")) {
         setUnverifiedEmail(formData.email);
+      } else if (
+        error.message.includes("Invalid login") ||
+        error.message.includes("invalid_credentials") ||
+        error.message.includes("Invalid credentials") ||
+        error.message.includes("wrong password") ||
+        error.message.includes("Email not confirmed")
+      ) {
+        setLoginError("Incorrect email or password. Please try again.");
+      } else {
+        setLoginError(error.message || "Login failed. Please try again.");
       }
     } finally {
       setLoading(false);
@@ -71,6 +82,12 @@ const LoginPage = () => {
                 >
                   Resend Verification Email
                 </Button>
+              </div>
+            )}
+
+            {loginError && (
+              <div className="mb-6 bg-destructive/10 border border-destructive/20 rounded-lg p-4 text-center">
+                <p className="text-sm font-semibold text-destructive">{loginError}</p>
               </div>
             )}
 

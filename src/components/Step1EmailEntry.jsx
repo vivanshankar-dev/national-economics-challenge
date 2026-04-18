@@ -6,6 +6,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID = 'service_xq99sct';
+const EMAILJS_VERIFICATION_TEMPLATE_ID = 'template_j4f3fq7';
+const EMAILJS_PUBLIC_KEY = 'VMqIefDXUISYTLxmu';
 
 const Step1EmailEntry = ({ onNext, data, updateData }) => {
   const [loading, setLoading] = useState(false);
@@ -42,32 +47,17 @@ const Step1EmailEntry = ({ onNext, data, updateData }) => {
 
       if (dbError) throw dbError;
 
-      // Send email using our edge function
-      const { data: funcData, error: funcError } = await supabase.functions.invoke('send-verification-email', {
-        body: { 
-          email: data.email, 
-          verificationCode: code,
-          userName: data.fullName
-        }
-      });
-
-      // Handle function invocation errors (e.g. network failure)
-      if (funcError) {
-        console.error("Edge function invocation error:", funcError);
-        throw new Error("Failed to send verification email. Please try again.");
-      }
-
-      // Handle custom success: false responses returned with status 200
-      if (funcData && funcData.success === false) {
-        console.error("Email send failed detail:", funcData.error, funcData.details);
-        
-        let errorMessage = "Failed to send verification email.";
-        if (funcData.error && !funcData.error.includes('Edge function received')) {
-          errorMessage = funcData.error;
-        }
-        
-        throw new Error(errorMessage + " Please try again or contact support.");
-      }
+      // Send verification email via EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_VERIFICATION_TEMPLATE_ID,
+        {
+          email: data.email,
+          user_name: data.fullName,
+          verification_code: code,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       toast({
         title: "Verification Code Sent!",
@@ -78,11 +68,6 @@ const Step1EmailEntry = ({ onNext, data, updateData }) => {
       console.error("Signup submission error:", error);
       
       let errorMessage = error.message || "An unexpected error occurred.";
-      
-      // Don't show raw "Edge function received..." errors to users
-      if (errorMessage.includes('Edge function received')) {
-        errorMessage = "Failed to send verification email. Please try again or contact support.";
-      }
       
       toast({
         title: "Unable to Send Verification Code",

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import ContactForm from '@/components/ContactForm';
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare, User } from 'lucide-react';
 
 const ContactPage = () => {
   return (
@@ -23,20 +23,24 @@ const ContactPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 items-start">
-            <div className="md:col-span-1 space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-border">
-                <h3 className="font-bold text-xl mb-4 text-foreground">Direct Email</h3>
-                <p className="text-muted-foreground mb-4">
-                  For general inquiries, support, or partnership opportunities, email us directly:
+            <div className="md:col-span-1 space-y-6">
+              <div className="bg-primary/5 p-8 rounded-3xl border-2 border-primary/20">
+                <div className="flex items-center gap-2 mb-4">
+                  <User className="w-5 h-5 text-primary" />
+                  <h3 className="font-bold text-xl text-foreground">Direct Contact</h3>
+                </div>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  Reach the organizer directly:
                 </p>
-                <a href="mailto:team@nationaleconomicschallenge.dedyn.io" className="inline-flex items-center text-primary font-semibold hover:underline">
-                  <Mail className="w-5 h-5 mr-2" />
-                  team@nationaleconomicschallenge.dedyn.io
+                <a href="mailto:vivan.shankar@gmail.com" className="inline-flex items-center text-primary font-semibold hover:underline text-sm">
+                  <Mail className="w-4 h-4 mr-2 shrink-0" />
+                  vivan.shankar@gmail.com
                 </a>
               </div>
+
               <div className="bg-secondary/30 p-8 rounded-3xl border border-secondary">
                 <h3 className="font-bold text-xl mb-2 text-foreground">Response Time</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Our team typically responds within 24-48 business hours. During peak submission periods, responses may take slightly longer.
                 </p>
               </div>
