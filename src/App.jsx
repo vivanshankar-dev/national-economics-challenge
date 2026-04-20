@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from '@/components/ui/toaster';
 import MainLayout from '@/layouts/MainLayout';
@@ -64,6 +65,7 @@ function App() {
         </Routes>
       </Router>
       <Toaster />
+      <Analytics />
     </AuthProvider>
   );
 }
