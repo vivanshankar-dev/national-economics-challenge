@@ -58,18 +58,6 @@ export const AuthProvider = ({ children }) => {
       });
       if (error) throw error;
       
-      // Check email verification status before finalizing login
-      const { data: pData } = await supabase
-        .from('participants')
-        .select('email_verified')
-        .eq('id', data.user.id)
-        .single();
-
-      if (pData && pData.email_verified === false) {
-        await supabase.auth.signOut();
-        throw new Error("Please verify your email before logging in");
-      }
-
       setIsEmailVerified(true);
       toast({
         title: "Login Successful",

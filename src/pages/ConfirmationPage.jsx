@@ -16,12 +16,12 @@ const ConfirmationPage = () => {
           <div className="bg-primary/10 p-4 rounded-full mb-6">
             <MailCheck className="h-12 w-12 text-primary" />
           </div>
-          <h1 className="text-3xl font-extrabold text-foreground mb-4">Email Confirmation</h1>
+          <h1 className="text-3xl font-extrabold text-foreground mb-4">Account Created!</h1>
           <p className="text-lg text-muted-foreground mb-4">
-            We have sent you an email labelled 'team' with your username and password.
+            Your account has been successfully created.
           </p>
           <p className="text-base text-muted-foreground mb-8">
-            You can use the credentials in that email to log in to your account securely.
+            You can now log in using your email address and the password you were shown. Head to the Log In page whenever you're ready to submit your essay.
           </p>
           <Link to="/" className="w-full sm:w-auto">
             <Button size="lg" className="w-full sm:w-auto">
