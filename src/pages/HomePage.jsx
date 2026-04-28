@@ -61,13 +61,13 @@ const HomePage = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6 text-foreground">Democratizing Economic Education</h2>
               <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                The National Economics Challenge (NEC) is more than just a competition; it is a global movement. Our mission is to break down the complex jargon of academic economics and make it accessible to everyone, regardless of their background or native language. We envision a world where young minds from diverse communities can contribute directly to solving pressing global financial challenges.
+                The National Economics Challenge (NEC) is more than just a competition; it is a global movement. Our mission is to break down the complex jargon of academic economics and make it accessible to everyone, regardless of their background. We envision a world where young minds from diverse communities can contribute directly to solving pressing global financial challenges.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <PillarCard icon={Globe} title="Global Community" description="Connecting bright minds across borders to tackle pressing economic issues through collaborative discourse." />
               <PillarCard icon={BookOpen} title="Rigorous Analysis" description="Fostering deep research, critical thinking, and highly structured argumentation in young scholars." />
-              <PillarCard icon={Users} title="Inclusive Outreach" description="Translating key insights into regional languages to break down barriers to economic literacy." />
+              <PillarCard icon={Users} title="Inclusive Outreach" description="Connecting our top essay authors with underprivileged communities through live workshops and guest speaker sessions." />
               <PillarCard icon={Shield} title="Academic Integrity" description="Upholding the absolute highest standards of original, unaided, and honest student scholarship." />
             </div>
           </div>
@@ -98,7 +98,7 @@ const HomePage = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Real-World Impact</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Your ideas don't just stay in a grading folder. They contribute to a growing open-access archive, serving as a resource for future students. The best essays are translated and distributed to under-resourced schools.
+                  Your ideas don't just stay in a grading folder. They contribute to a growing open-access archive, serving as a resource for future students. The best essays are presented at live workshops with our partner organisations, reaching communities that need them most.
                 </p>
               </motion.div>
               <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-3xl shadow-sm border border-border">
@@ -146,7 +146,7 @@ const HomePage = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-10 rounded-3xl flex-1 border border-white/20">
                 <h3 className="text-2xl font-bold mb-4 text-white">For Educators & Partners</h3>
-                <p className="text-white/80 mb-8 leading-relaxed">Integrate our prompts into your curriculum, or join our network to distribute translated essays.</p>
+                <p className="text-white/80 mb-8 leading-relaxed">Integrate our prompts into your curriculum, or join our network to bring student economics research to your community.</p>
                 <Link to="/contact">
                   <Button variant="outline" className="w-full h-12 text-lg rounded-xl border-white/50 text-foreground hover:bg-white hover:text-foreground">Partner With Us</Button>
                 </Link>

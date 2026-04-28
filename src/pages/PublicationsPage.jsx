@@ -123,7 +123,7 @@ const PublicationsPage = () => {
                     <h3 className="text-2xl font-bold text-orange-700 mb-2">Top 10 Finalists</h3>
                     <p className="text-4xl font-black text-foreground mb-4">Published</p>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      The top 10 essays represent the top 1% of submissions. They are published in full in the official booklet and translation bundles, receiving high commendation.
+                      The top 10 essays represent the top 1% of submissions. They are published in full in the official booklet and presented at live community workshops through our partner organisations, receiving high commendation.
                     </p>
                     <ul className="text-sm font-bold text-orange-800 space-y-2">
                       <li>✓ Full Booklet Publication</li>
@@ -180,7 +180,7 @@ const PublicationsPage = () => {
                         <Share2 className="w-8 h-8 text-primary mr-4 shrink-0 mt-1" />
                         <div>
                           <h4 className="font-bold text-lg">Targeted Reach</h4>
-                          <p className="text-sm text-muted-foreground mt-1">Through our Strategic Distribution model, the booklet is sent digitally to 5 schools and physically translated for outreach programs.</p>
+                          <p className="text-sm text-muted-foreground mt-1">Through our community outreach programme, the booklet is shared with partner organisations who bring student research directly to underprivileged communities through live workshops and guest speaker sessions.</p>
                         </div>
                       </div>
                     </div>
