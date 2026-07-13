@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Info, Calendar, BookOpen, PenTool, CheckCircle, HelpCircle } from 'lucide-react';
+import { Info, Calendar, BookOpen, PenTool, CheckCircle, HelpCircle, Users } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence } from 'framer-motion';
 
