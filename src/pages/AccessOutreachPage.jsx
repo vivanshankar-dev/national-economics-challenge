@@ -1,14 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import StepCard from '@/components/StepCard';
-import { HeartHandshake, Globe2, BookOpen, GraduationCap, Megaphone, Users, Mic } from 'lucide-react';
+import { HeartHandshake, Globe2, BookOpen, GraduationCap, Megaphone, Users, Mic, Wrench } from 'lucide-react';
 
 const AccessOutreachPage = () => {
   return (
     <>
       <Helmet>
-        <title>Access & Outreach | National Economics Challenge</title>
-        <meta name="description" content="Discover how NEC brings student economics research to underprivileged communities through live workshops and partnerships." />
+        <title>Community Pilots | National Economics Challenge</title>
+        <meta name="description" content="How NEC finalist proposals become real four-week pilots in underserved communities, delivered through our partnership with Youth Economy Lab." />
       </Helmet>
       
       <div className="min-h-screen bg-background font-sans">
@@ -17,112 +17,112 @@ const AccessOutreachPage = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-foreground to-foreground opacity-50"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <HeartHandshake className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Knowledge Shouldn't Have Borders</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Where Proposals Become Pilots</h1>
             <p className="text-xl md:text-2xl text-muted leading-relaxed opacity-90">
-              The Access & Outreach Program connects NEC's top student researchers with underprivileged communities — turning academic scholarship into real-world impact.
+              The NEC Community Pilot Program is where the competition's best ideas meet real communities — turning student proposals into four-week, live economic interventions.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           
-          {/* Mission & Impact */}
+          {/* How the pilot works */}
           <div className="grid lg:grid-cols-2 gap-16 mb-24 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">From the Page to the People</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">From Proposal to Pilot</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                The most important ideas in economics are often the least accessible. NEC's Access & Outreach Program is designed to close that gap — by bringing our top essay finalists directly to communities that lack access to quality economics education.
+                Once judging is complete, the top 5 to 8 proposals are matched with a Youth Economy Lab chapter whose community fits the intervention's target group. The YEL chapter recruits 10 to 20 local participants and assigns a point of contact who coordinates with the finalist throughout the four-week pilot window.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Through partnerships with grassroots organisations, our finalist authors present their research at live workshops and guest speaker sessions — making economics feel relevant, accessible, and human.
+                Everything runs remotely — through calls, messaging platforms, and shared documents. No travel is required. At the end of the four weeks, each finalist documents what happened: what changed, what did not, and what a larger-scale version would require.
               </p>
               <div className="flex gap-6 mt-8">
                 <div className="flex flex-col">
-                  <span className="text-4xl font-extrabold text-primary">Top 10</span>
-                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Essays Selected</span>
+                  <span className="text-4xl font-extrabold text-primary">5 to 8</span>
+                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Pilots Per Cycle</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-4xl font-extrabold text-primary">Growing</span>
-                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Partnerships</span>
+                  <span className="text-4xl font-extrabold text-primary">4 Weeks</span>
+                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Per Pilot</span>
                 </div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-lg border border-border">
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center"><Globe2 className="mr-3 text-primary" /> The Ripple Effect</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center"><Globe2 className="mr-3 text-primary" /> What Each Pilot Produces</h3>
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <div className="bg-secondary p-2 rounded-lg mr-4 mt-1"><Mic className="w-5 h-5 text-secondary-foreground" /></div>
+                  <div className="bg-secondary p-2 rounded-lg mr-4 mt-1"><Wrench className="w-5 h-5 text-secondary-foreground" /></div>
                   <div>
-                    <h4 className="font-bold text-lg">Student Voices, Real Audiences</h4>
-                    <p className="text-muted-foreground text-sm mt-1">Finalist authors present their research at live sessions hosted by our partner organisations, bringing academic thinking into communities that rarely encounter it.</p>
+                    <h4 className="font-bold text-lg">A Real Intervention</h4>
+                    <p className="text-muted-foreground text-sm mt-1">A live economic intervention run with real community participants — not a simulation, not a presentation. Something that actually happened.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-secondary p-2 rounded-lg mr-4 mt-1"><GraduationCap className="w-5 h-5 text-secondary-foreground" /></div>
                   <div>
-                    <h4 className="font-bold text-lg">Inspiring Future Scholars</h4>
-                    <p className="text-muted-foreground text-sm mt-1">Hearing economics research presented by a peer — not a professor — demystifies the subject and inspires younger students to engage.</p>
+                    <h4 className="font-bold text-lg">A Before-and-After Record</h4>
+                    <p className="text-muted-foreground text-sm mt-1">Each pilot produces a published writeup documenting what was tried, what changed, and what the evidence suggests about scaling. Quantitative where possible, qualitative where not.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-secondary p-2 rounded-lg mr-4 mt-1"><Users className="w-5 h-5 text-secondary-foreground" /></div>
                   <div>
-                    <h4 className="font-bold text-lg">Community Discourse</h4>
-                    <p className="text-muted-foreground text-sm mt-1">When students present essays on topics like income inequality, financial inclusion, or housing economics to the communities experiencing those issues, the conversation becomes real.</p>
+                    <h4 className="font-bold text-lg">A Published Credential</h4>
+                    <p className="text-muted-foreground text-sm mt-1">All pilot finalists are recognized as part of the NEC Pilot Cohort, with their writeup published on the NEC platform alongside co-branding from Youth Economy Lab.</p>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* How It Works */}
+          {/* How It Works Steps */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">How The Program Works</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">How the Pilot Stage Works</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our model ensures that the ideas generated in the competition reach the audiences that need them most.
+              From proposal selection to published results, here is the full sequence.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 mb-24 relative">
             <div className="hidden md:block absolute top-10 left-1/8 right-1/8 h-1 bg-border z-0"></div>
-            <StepCard number="1" title="Curation" description="We carefully select the Top 10 most impactful and universally relevant essays from the annual competition." />
-            <StepCard number="2" title="Preparation" description="Finalist authors work with NEC to prepare their research for a live audience — distilling complex ideas into accessible, engaging presentations." />
-            <StepCard number="3" title="Workshops" description="NEC co-hosts live economics workshops with partner organisations, where finalist authors present their research directly to underprivileged communities." />
-            <StepCard number="4" title="Guest Sessions" description="Top authors join our partners' existing community programmes as guest speakers, creating an ongoing bridge between student scholarship and the real world." />
+            <StepCard number="1" title="Selection" description="Judges select the top 5 to 8 proposals from the full pool, based on economic reasoning, feasibility, and potential impact." />
+            <StepCard number="2" title="Matching" description="Each finalist is matched with a YEL chapter whose community fits the proposal's target group — gig workers, smallholder farmers, unbanked households, and similar populations." />
+            <StepCard number="3" title="Pilot Execution" description="Over four weeks, the finalist runs their intervention remotely with 10 to 20 community participants recruited by the YEL chapter. The chapter assigns a local point of contact throughout." />
+            <StepCard number="4" title="Documentation" description="Each finalist submits a before-and-after writeup. Results are published as part of the NEC Pilot Cohort record, and all finalists receive NEC/YEL certification." />
           </div>
 
-          {/* Partners Section */}
+          {/* YEL Partnership */}
           <div className="bg-gradient-to-br from-white to-secondary/20 p-12 rounded-3xl shadow-sm border border-border mb-24">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Our Partner Organisations</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Our Partnership With Youth Economy Lab</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We work with grassroots organisations that already have the community trust and infrastructure to deliver impact. NEC brings the research — our partners bring the people.
+                YEL is the infrastructure that makes the pilot stage possible. Without their chapter network, finalist proposals stay on paper.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="bg-white p-6 rounded-2xl border border-border shadow-sm">
-                <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-bold text-lg mb-2">Education NGOs</h4>
-                <p className="text-muted-foreground text-sm">Partnering with organisations working in under-resourced schools across South Asia and beyond.</p>
+                <Users className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-lg mb-2">Community Access</h4>
+                <p className="text-muted-foreground text-sm">YEL chapters across Asia and the US have the local trust and relationships needed to recruit real community participants for each pilot.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl border border-border shadow-sm">
-                <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-bold text-lg mb-2">Financial Literacy Orgs</h4>
-                <p className="text-muted-foreground text-sm">Collaborating with financial literacy organisations whose community audiences benefit directly from student economics research.</p>
+                <Mic className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-lg mb-2">Local Coordination</h4>
+                <p className="text-muted-foreground text-sm">Each chapter assigns a dedicated point of contact who liaises between the finalist and the community throughout the four-week window.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl border border-border shadow-sm">
                 <Megaphone className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-bold text-lg mb-2">Student Networks</h4>
-                <p className="text-muted-foreground text-sm">Working with student-led organisations to amplify the reach of our workshops and create peer-to-peer impact.</p>
+                <h4 className="font-bold text-lg mb-2">Co-Branding and Credit</h4>
+                <p className="text-muted-foreground text-sm">YEL is credited as implementation partner on all NEC pilot materials. Their chapters receive recognition in every published writeup they support.</p>
               </div>
             </div>
           </div>
 
-          {/* Call to Action */}
+          {/* CTA */}
           <div className="text-center bg-foreground text-background p-12 rounded-3xl shadow-xl">
             <h2 className="text-3xl font-bold mb-6">Become a Partner or Ambassador</h2>
             <p className="text-lg text-muted max-w-3xl mx-auto mb-10 leading-relaxed">
-              Are you an organisation working with underprivileged communities? We'd love to bring NEC's student researchers to your audience. Are you an educator? Get involved and help us expand our reach.
+              Are you an organisation working with underserved communities? We would love to explore bringing NEC pilots to your network. Are you an educator? Get in touch to bring NEC to your students.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="/contact" className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg">
