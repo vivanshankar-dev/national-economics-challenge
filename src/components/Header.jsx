@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -82,7 +81,7 @@ const Header = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48">
                     <DropdownMenuItem asChild>
-                      <Link to="/essay-submission" className="cursor-pointer w-full">Submit Essay</Link>
+                      <Link to="/essay-submission" className="cursor-pointer w-full">Submit Proposal</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-destructive focus:bg-destructive focus:text-destructive-foreground">
                       <LogOut className="w-4 h-4 mr-2" /> Log out
@@ -137,7 +136,7 @@ const Header = () => {
                 ) : (
                   <>
                     <Link to="/essay-submission" onClick={() => setIsOpen(false)}>
-                      <Button className="w-full justify-center">Submit Essay</Button>
+                      <Button className="w-full justify-center">Submit Proposal</Button>
                     </Link>
                     <Button variant="outline" className="w-full justify-center text-destructive border-destructive/20" onClick={handleLogout}>
                       <LogOut className="w-4 h-4 mr-2" /> Log Out
