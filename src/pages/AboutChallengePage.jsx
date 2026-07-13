@@ -5,11 +5,11 @@ import {
   Lightbulb, 
   Target, 
   Award, 
-  Crown, 
   BookOpen, 
   Users, 
   BarChart, 
-  Globe2 
+  Globe2,
+  Wrench
 } from 'lucide-react';
 
 const AboutChallengePage = () => {
@@ -30,7 +30,7 @@ const AboutChallengePage = () => {
     <>
       <Helmet>
         <title>About the Challenge - National Economics Challenge</title>
-        <meta name="description" content="Learn about the National Economics Challenge's purpose, selection criteria, and our awards structure." />
+        <meta name="description" content="Learn about the National Economics Challenge's purpose, competition format, and how we partner with Youth Economy Lab to turn student proposals into real community pilots." />
       </Helmet>
 
       <div className="bg-gradient-to-br from-emerald-50 via-white to-blue-50 min-h-screen">
@@ -46,7 +46,7 @@ const AboutChallengePage = () => {
             >
               <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">About the Challenge</h1>
               <p className="text-xl max-w-4xl mx-auto leading-relaxed text-blue-100">
-                We are dedicated to fostering clarity of thinking, depth of reasoning, and intellectual honesty through rigorous undergraduate-level economics writing. 
+                NEC is not an essay competition. It is a project competition where student proposals become real pilots in real communities.
               </p>
             </motion.div>
           </div>
@@ -68,10 +68,10 @@ const AboutChallengePage = () => {
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
                 <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                  The National Economics Challenge exists to bridge the gap between high school curiosity and academic rigor. We believe that economic literacy is a cornerstone of informed citizenship.
+                  The National Economics Challenge exists to prove that serious economic analysis does not have to end in a grading folder. Every year, talented students produce compelling thinking about pressing economic problems — and almost none of it reaches the communities those problems affect.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Our mission is twofold: to identify young talent capable of sophisticated analysis, and to democratize access to economic knowledge by translating and distributing their work to underserved communities.
+                  Our mission is to close that gap. By making the pilot stage structural — not optional, not aspirational — we ensure that the best student work produces something measurable in the real world.
                 </p>
               </div>
 
@@ -81,17 +81,17 @@ const AboutChallengePage = () => {
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
                 <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                  We envision a world where young people are active participants in the economic dialogue, not just bystanders.
+                  We envision a competition where winning is defined not just by the quality of your argument, but by what actually happens when your idea meets the real world.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  We see the National Economics Challenge becoming the global gold standard for pre-collegiate economic research, creating a diverse pipeline of future economists, policymakers, and business leaders who prioritize clarity and honesty in their work.
+                  Through our partnership with Youth Economy Lab, NEC aims to build a growing record of student-led economic interventions — small in scale, rigorous in design, and genuine in impact — that demonstrate what pre-collegiate economics can actually produce.
                 </p>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Key Differentiators */}
+        {/* What Sets Us Apart */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -101,34 +101,34 @@ const AboutChallengePage = () => {
               viewport={{ once: true }}
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">What Sets Us Apart?</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">What Sets Us Apart</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We are not a multiple-choice quiz. We are a platform for deep thought.
+                  Most competitions end when the judging does. Ours is designed so the judging is just the beginning.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 rounded-2xl p-8 hover:bg-emerald-50 transition-colors duration-300 group">
-                  <BookOpen className="h-10 w-10 text-gray-400 group-hover:text-emerald-600 mb-6 transition-colors" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Undergraduate Standards</h3>
+                  <Wrench className="h-10 w-10 text-gray-400 group-hover:text-emerald-600 mb-6 transition-colors" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Applied, Not Theoretical</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    We don't simplify economics for high schoolers. We ask you to engage with the subject at a university level, citing academic sources and constructing complex arguments.
+                    We do not ask students to write essays about economic problems. We ask them to design solutions — concrete, costed, community-specific interventions that could plausibly be run in the real world.
                   </p>
                 </div>
 
                 <div className="bg-gray-50 rounded-2xl p-8 hover:bg-blue-50 transition-colors duration-300 group">
                   <Award className="h-10 w-10 text-gray-400 group-hover:text-blue-600 mb-6 transition-colors" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Publication & Prizes</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Pilots, Not Just Prizes</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    We offer publication in the National Economics Booklet and substantial monetary prizes for top performers. 1st Place receives $250 and 2nd Place receives $100.
+                    The top 5 to 8 proposals are not just recognized — they are piloted. Finalists run a four-week remote pilot with real community participants, coordinated through our YEL chapter network. Cash prizes and NEC/YEL certification go to all Pilot Cohort members.
                   </p>
                 </div>
 
                 <div className="bg-gray-50 rounded-2xl p-8 hover:bg-indigo-50 transition-colors duration-300 group">
                   <Users className="h-10 w-10 text-gray-400 group-hover:text-indigo-600 mb-6 transition-colors" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Double-Blind Peer Review</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Institutional Partnership</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Our evaluation process is rigorous and unbiased. Judges do not know your name or school, ensuring that results are based purely on the merit of your ideas.
+                    Our partnership with Youth Economy Lab gives every finalist access to a real chapter network across Asia and the US. YEL chapters recruit local participants, coordinate logistics, and provide the community access that makes pilots possible.
                   </p>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const AboutChallengePage = () => {
           </div>
         </section>
 
-        {/* Selection Criteria Detailed */}
+        {/* Judging Criteria */}
         <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -152,20 +152,16 @@ const AboutChallengePage = () => {
               <div className="space-y-6">
                 {[
                   {
-                    title: 'Clarity of Thinking (30%)',
-                    desc: 'We prize simplicity on the other side of complexity. Can you explain a difficult concept without jargon? Is your logical flow unbreakable? We look for essays that guide the reader through an argument effortlessly.'
+                    title: 'Economic Reasoning (40%)',
+                    desc: 'Is the intervention grounded in sound economic thinking? Does the student correctly identify the market failure or structural problem at play, and does their proposed solution address it with appropriate mechanisms? We look for evidence of genuine economic understanding, not surface-level description.'
                   },
                   {
-                    title: 'Depth of Economic Reasoning (30%)',
-                    desc: 'This is the core. Do you correctly apply economic models? Do you understand the mechanisms at play? We want to see you identifying second-order effects and unintended consequences, not just stating surface-level observations.'
+                    title: 'Feasibility (30%)',
+                    desc: 'Could this actually be piloted? We evaluate whether the proposal is realistic given the resources available, the community being targeted, and the four-week pilot window. Ambitious ideas are welcome — but they must be executable.'
                   },
                   {
-                    title: 'Evidence & Research (20%)',
-                    desc: 'Opinions are cheap; data is valuable. High-scoring essays are grounded in empirical evidence, citing reputable academic sources, data sets, and case studies to support every claim.'
-                  },
-                  {
-                    title: 'Intellectual Honesty & Nuance (20%)',
-                    desc: 'Economics is rarely black and white. We heavily penalize one-sided arguments. We reward essays that acknowledge trade-offs, limitations of their own data, and valid counterarguments.'
+                    title: 'Potential Impact (30%)',
+                    desc: 'If this intervention worked, what would change? Judges assess whether the proposed outcome is meaningful, measurable, and genuinely relevant to the community being served. We reward proposals that think clearly about second-order effects and realistic scale.'
                   }
                 ].map((criterion, idx) => (
                   <motion.div 
@@ -183,7 +179,7 @@ const AboutChallengePage = () => {
                 <BarChart className="h-12 w-12 mx-auto mb-4 text-emerald-400" />
                 <h3 className="text-2xl font-bold mb-4">Our Judges</h3>
                 <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                  Your work is evaluated by a curated panel of AP/IB Economics teachers and university professors. They are experts in the field who value academic integrity and original thought.
+                  Proposals are evaluated by a panel of economics professors and researchers who assess both the analytical quality of the proposal and the realism of its pilot plan. Judging is double-blind — your name and school are never visible to evaluators.
                 </p>
               </div>
             </motion.div>
