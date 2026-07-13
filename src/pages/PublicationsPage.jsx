@@ -1,17 +1,16 @@
-
 import React, { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
-import { Book, Award, Share2, Star, Download } from 'lucide-react';
+import { Book, Award, Share2, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PublicationsPage = () => {
-  const [activeTab, setActiveTab] = useState('awards');
+  const [activeTab, setActiveTab] = useState('recognition');
   const tabsRef = useRef(null);
 
   const tabs = [
-    { id: 'awards', label: 'Awards System' },
+    { id: 'recognition', label: 'Recognition' },
     { id: 'booklet', label: 'The Booklet' },
     { id: 'showcase', label: 'Showcase' }
   ];
@@ -34,24 +33,22 @@ const PublicationsPage = () => {
     <>
       <Helmet>
         <title>Publications | National Economics Challenge</title>
-        <meta name="description" content="Learn about the National Economics Booklet, publication criteria, and the benefits of becoming a published young scholar." />
+        <meta name="description" content="The NEC Pilot Cohort Booklet — an annual publication compiling the pilot writeups of the top 5 to 8 finalists each cycle." />
       </Helmet>
       
       <div className="min-h-screen bg-background font-sans pb-20">
-        {/* Header */}
         <div className="bg-primary py-24 px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <Book className="w-16 h-16 text-primary-foreground mx-auto mb-6" />
-            <h1 className="text-5xl md:text-6xl font-extrabold text-primary-foreground mb-6">Publications & Awards</h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-primary-foreground mb-6">Publications</h1>
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Recognizing intellectual rigor and ensuring the best ideas reach the widest possible audience. Being published in the NEC is a mark of exceptional academic capability.
+              Every year, the pilot writeups of NEC's top finalists are compiled into the NEC Pilot Cohort Booklet — a published record of real student-led economic interventions.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" ref={tabsRef}>
           
-          {/* Smooth Tabs Navigation */}
           <div className="flex overflow-x-auto hide-scrollbar justify-center mb-12 border-b border-border">
             <div className="flex space-x-8">
               {tabs.map((tab) => (
@@ -76,58 +73,48 @@ const PublicationsPage = () => {
             </div>
           </div>
 
-          {/* Tab Content */}
           <AnimatePresence mode="wait">
-            {activeTab === 'awards' && (
-              <motion.div
-                key="awards"
-                variants={tabContentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
+
+            {activeTab === 'recognition' && (
+              <motion.div key="recognition" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-foreground mb-4">The Tiered Recognition System</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">We reward excellence through cash prizes and the prestige of official academic publication.</p>
+                  <h2 className="text-4xl font-bold text-foreground mb-4">How Recognition Works</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">NEC does not offer cash prizes. Recognition is based on what you built and what it produced.</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                  <div className="bg-gradient-to-b from-yellow-50 to-white p-8 rounded-3xl border border-yellow-200 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                      <Star className="w-24 h-24 text-yellow-500" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-yellow-700 mb-2">Grand Prize</h3>
-                    <p className="text-4xl font-black text-foreground mb-4">$250</p>
+                  <div className="bg-gradient-to-b from-yellow-50 to-white p-8 rounded-3xl border border-yellow-200 shadow-sm">
+                    <h3 className="text-2xl font-bold text-yellow-700 mb-4">1st Place</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Awarded to the single best essay of the year. The winner receives a cash prize, is featured as the lead essay in the National Economics Booklet, and is immortalized in our digital archive.
+                      The primary winner is selected based on the combined quality of their Stage 1 proposal and Stage 2 pilot writeup. Their work is featured as the lead entry in the NEC Pilot Cohort Booklet, and they receive full NEC/YEL certification and recognition across all NEC platforms.
                     </p>
                     <ul className="text-sm font-bold text-yellow-800 space-y-2">
                       <li>✓ Lead Booklet Feature</li>
+                      <li>✓ NEC/YEL Certification</li>
                       <li>✓ Official Certificate</li>
                     </ul>
                   </div>
 
                   <div className="bg-gradient-to-b from-slate-100 to-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <h3 className="text-2xl font-bold text-slate-600 mb-2">Second Place</h3>
-                    <p className="text-4xl font-black text-foreground mb-4">$100</p>
+                    <h3 className="text-2xl font-bold text-slate-600 mb-4">2nd and 3rd Place</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Awarded to the runner-up for outstanding scholarship. Includes full publication, a cash prize, and highlighted recognition across all NEC platforms.
+                      Runners-up receive full publication in the Booklet, NEC/YEL certification, and highlighted recognition across all NEC platforms. Both are credited as co-authors of the published Pilot Cohort record.
                     </p>
                     <ul className="text-sm font-bold text-slate-700 space-y-2">
                       <li>✓ Full Booklet Publication</li>
+                      <li>✓ NEC/YEL Certification</li>
                       <li>✓ Official Certificate</li>
                     </ul>
                   </div>
 
                   <div className="bg-gradient-to-b from-orange-50 to-white p-8 rounded-3xl border border-orange-200 shadow-sm">
-                    <h3 className="text-2xl font-bold text-orange-700 mb-2">Top 10 Finalists</h3>
-                    <p className="text-4xl font-black text-foreground mb-4">Published</p>
+                    <h3 className="text-2xl font-bold text-orange-700 mb-4">Pilot Cohort (4th to 8th)</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      The top 10 essays represent the top 1% of submissions. They are published in full in the official booklet and presented at live community workshops through our partner organisations, receiving high commendation.
+                      All remaining pilot finalists are recognized as part of the official NEC Pilot Cohort. Their writeups are published in the Booklet alongside the top 3, and they receive NEC/YEL co-certification — a credential that reflects real community impact, not just a competition placement.
                     </p>
                     <ul className="text-sm font-bold text-orange-800 space-y-2">
                       <li>✓ Full Booklet Publication</li>
-                      <li>✓ Translation Eligibility</li>
+                      <li>✓ NEC/YEL Co-Certification</li>
                     </ul>
                   </div>
                 </div>
@@ -135,52 +122,46 @@ const PublicationsPage = () => {
             )}
 
             {activeTab === 'booklet' && (
-              <motion.div
-                key="booklet"
-                variants={tabContentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
+              <motion.div key="booklet" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div className="bg-foreground text-background p-12 rounded-3xl shadow-xl order-2 lg:order-1">
                     <h2 className="text-3xl font-bold mb-6 flex items-center">
-                      <Book className="mr-3 w-8 h-8 text-primary" /> The National Economics Booklet
+                      <Book className="mr-3 w-8 h-8 text-primary" /> The NEC Pilot Cohort Booklet
                     </h2>
                     <p className="text-lg opacity-90 leading-relaxed mb-6">
-                      Our flagship annual publication. It compiles the winning essays, extensive judge commentary, and high-quality economic data visualizations into a single, cohesive, professionally formatted volume.
+                      Published annually at the end of each competition cycle, the Booklet compiles the full pilot writeups of the top 5 to 8 finalists — documenting what each team tried, what happened, and what the evidence suggests about scaling their intervention.
                     </p>
                     <div className="space-y-4 border-t border-white/20 pt-6">
-                      <h4 className="font-bold text-xl">What's Inside?</h4>
+                      <h4 className="font-bold text-xl">What Is Inside</h4>
                       <ul className="space-y-3 opacity-90">
-                        <li className="flex items-center">✓ Foreword by leading economics professors</li>
-                        <li className="flex items-center">✓ Unabridged texts of the Top 10 Essays</li>
-                        <li className="flex items-center">✓ Expert commentary on why each essay succeeded</li>
-                        <li className="flex items-center">✓ Policy implication summaries</li>
+                        <li className="flex items-center">✓ Full pilot writeups from all Pilot Cohort members</li>
+                        <li className="flex items-center">✓ Before and after results from each community pilot</li>
+                        <li className="flex items-center">✓ Judge commentary on proposal quality and pilot execution</li>
+                        <li className="flex items-center">✓ Scale-up analysis for each intervention</li>
                       </ul>
                     </div>
                   </div>
                   
                   <div className="order-1 lg:order-2">
-                    <h2 className="text-4xl font-bold text-foreground mb-6">What Does It Mean to Be Published?</h2>
+                    <h2 className="text-4xl font-bold text-foreground mb-6">What Publication Means</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                      Publication is the ultimate validation of your hard work. It transforms a homework assignment into a citable academic resource.
+                      Being published in the NEC Booklet is not just recognition — it is a documented record that your economic intervention was designed, piloted, and produced real results in a real community.
                     </p>
                     
                     <div className="space-y-6">
                       <div className="bg-white p-6 rounded-2xl border border-border shadow-sm flex items-start">
                         <Award className="w-8 h-8 text-primary mr-4 shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-lg">College Admissions Advantage</h4>
-                          <p className="text-sm text-muted-foreground mt-1">A published paper demonstrates high-level research capabilities and intellectual curiosity, standing out significantly on university applications.</p>
+                          <h4 className="font-bold text-lg">A Genuine Academic Credential</h4>
+                          <p className="text-sm text-muted-foreground mt-1">A published pilot writeup demonstrates applied research capability and real-world impact — something that stands apart from any standard essay competition on a university application.</p>
                         </div>
                       </div>
                       
                       <div className="bg-white p-6 rounded-2xl border border-border shadow-sm flex items-start">
                         <Share2 className="w-8 h-8 text-primary mr-4 shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-lg">Targeted Reach</h4>
-                          <p className="text-sm text-muted-foreground mt-1">Through our community outreach programme, the booklet is shared with partner organisations who bring student research directly to underprivileged communities through live workshops and guest speaker sessions.</p>
+                          <h4 className="font-bold text-lg">Co-Branded With YEL</h4>
+                          <p className="text-sm text-muted-foreground mt-1">The Booklet is published under co-branding with Youth Economy Lab, whose chapter network made the pilots possible. Every published author is credited alongside both NEC and YEL.</p>
                         </div>
                       </div>
                     </div>
@@ -190,17 +171,11 @@ const PublicationsPage = () => {
             )}
 
             {activeTab === 'showcase' && (
-              <motion.div
-                key="showcase"
-                variants={tabContentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
+              <motion.div key="showcase" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                 <div className="text-center bg-secondary/30 p-12 rounded-3xl border border-secondary border-dashed">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Featured Publications Showcase</h2>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">Pilot Cohort Showcase</h2>
                   <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                    The inaugural Volume 1: 2026 Edition is currently in progress. Check back after September 15, 2026, to download the comprehensive booklet and read the works of the world's brightest young economists.
+                    The inaugural NEC Pilot Cohort Booklet (2026 Edition) will be published at the conclusion of the first competition cycle. Check back after the final results are announced to download the full record of pilot writeups and community outcomes.
                   </p>
                   <TooltipProvider>
                     <Tooltip>
@@ -210,15 +185,15 @@ const PublicationsPage = () => {
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Available September 2026</p>
+                        <p>Available after the 2026 cycle concludes</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </div>
               </motion.div>
             )}
-          </AnimatePresence>
 
+          </AnimatePresence>
         </div>
       </div>
     </>
