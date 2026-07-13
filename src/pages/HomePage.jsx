@@ -131,6 +131,24 @@ const HomePage = () => {
           </div>
         </section>
 
+
+        {/* Partner Section */}
+        <section className="py-16 bg-white border-t border-border">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">In Partnership With</p>
+            <div className="flex justify-center items-center">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D560BAQGPzFnRgFVKYQ/company-logo_200_200/company-logo_200_200/0/1726313527941/youth_economy_lab_logo?e=2147483647&v=beta&t=HLVluUeqFXFAJqXGNBEv3l_uLVBV1GyCYJF7SalFIXA"
+                alt="Youth Economy Lab"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+            <p className="text-muted-foreground mt-6 max-w-xl mx-auto text-sm leading-relaxed">
+              Youth Economy Lab's chapter network across Asia and the United States provides the on-the-ground community access that makes NEC's pilot stage possible.
+            </p>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-24 bg-foreground text-background text-center px-4">
           <div className="max-w-4xl mx-auto">
