@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from '@/contexts/AuthContext';
@@ -6,11 +5,11 @@ import { Toaster } from '@/components/ui/toaster';
 import MainLayout from '@/layouts/MainLayout';
 import HomePage from '@/pages/HomePage';
 import AboutUsPage from '@/pages/AboutUsPage';
+import AboutChallengePage from '@/pages/AboutChallengePage';
 import CompetitionManualPage from '@/pages/CompetitionManualPage';
 import ArchivePage from '@/pages/ArchivePage';
 import AccessOutreachPage from '@/pages/AccessOutreachPage';
 import PublicationsPage from '@/pages/PublicationsPage';
-import PromptBankPage from '@/pages/PromptBankPage';
 import SignUpPage from '@/pages/SignUpPage';
 import LoginPage from '@/pages/LoginPage';
 import EssaySubmissionPage from '@/pages/EssaySubmissionPage';
@@ -29,11 +28,11 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutUsPage />} />
+            <Route path="about-challenge" element={<AboutChallengePage />} />
             <Route path="competition-manual" element={<CompetitionManualPage />} />
             <Route path="archive" element={<ArchivePage />} />
             <Route path="access-outreach" element={<AccessOutreachPage />} />
             <Route path="publications" element={<PublicationsPage />} />
-            <Route path="prompts" element={<PromptBankPage />} />
             <Route path="contact" element={<ContactPage />} />
             
             {/* Auth Routes */}
