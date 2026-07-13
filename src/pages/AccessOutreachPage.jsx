@@ -91,6 +91,22 @@ const AccessOutreachPage = () => {
             <StepCard number="4" title="Documentation" description="Each finalist submits a before-and-after writeup. Results are published as part of the NEC Pilot Cohort record, and all finalists receive NEC/YEL certification." />
           </div>
 
+
+          {/* YEL Logo */}
+          <div className="text-center mb-16">
+            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">Implementation Partner</p>
+            <div className="flex justify-center items-center mb-4">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D560BAQGPzFnRgFVKYQ/company-logo_200_200/company-logo_200_200/0/1726313527941/youth_economy_lab_logo?e=2147483647&v=beta&t=HLVluUeqFXFAJqXGNBEv3l_uLVBV1GyCYJF7SalFIXA"
+                alt="Youth Economy Lab"
+                className="h-20 w-auto object-contain"
+              />
+            </div>
+            <p className="text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
+              Youth Economy Lab is a global student economics organization with chapters across Asia and the United States. Their chapter network is the infrastructure that makes every NEC community pilot possible.
+            </p>
+          </div>
+
           {/* YEL Partnership */}
           <div className="bg-gradient-to-br from-white to-secondary/20 p-12 rounded-3xl shadow-sm border border-border mb-24">
             <div className="text-center mb-10">
