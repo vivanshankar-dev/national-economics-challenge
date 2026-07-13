@@ -17,9 +17,8 @@ const Header = () => {
     { path: '/about', label: 'About Us' },
     { path: '/competition-manual', label: 'Competition Manual' },
     { path: '/archive', label: 'Archive' },
-    { path: '/access-outreach', label: 'Access & Outreach' },
+    { path: '/access-outreach', label: 'Community Pilots' },
     { path: '/publications', label: 'Publications' },
-    { path: '/prompts', label: 'Prompt Bank' },
     { path: '/contact', label: 'Contact' },
   ];
 
