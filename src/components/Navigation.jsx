@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,7 +13,8 @@ const Navigation = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about-challenge', label: 'About' },
-    { path: '/prompts', label: 'Prompts' },
+    { path: '/competition-manual', label: 'Competition Manual' },
+    { path: '/access-outreach', label: 'Community Pilots' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -30,7 +30,6 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Left side: Logo & Text */}
           <Link 
             to="/" 
             className="flex items-center space-x-3 group"
@@ -47,7 +46,6 @@ const Navigation = () => {
             </span>
           </Link>
 
-          {/* Center side: Navigation Links */}
           <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
@@ -65,7 +63,6 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Right side: Auth Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
             {isAuthenticated ? (
               <>
@@ -94,7 +91,6 @@ const Navigation = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-full text-foreground hover:bg-secondary transition-colors"
@@ -104,7 +100,6 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
